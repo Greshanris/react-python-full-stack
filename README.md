@@ -20,7 +20,7 @@ we are building an website. The characterstics of website is simple:
 - ``flask`` for creation of **RestAPI**
 - ``flask-sqlalchemy`` for Object Relational Mapping, *toolkit that allows to access and manage SQL database using Python codes.*
 
-- ``flask-cors`` to get cors errors
+- ``flask-cors`` to allow requests to my Flask application from different origins (domains or ports). For instance, if frontend runs on ``http://localhost:3000`` and backend runs on ``http://localhost:5000``, CORS ensures that the frontend can call the backend without restrictions.
 
 ## challenges encoutered and solution found
 
