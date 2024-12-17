@@ -22,3 +22,22 @@ we are building an website. The characterstics of website is simple:
 
 - ``flask-cors`` to get cors errors
 
+## challenges encoutered and solution found
+
+### first challenge
+After, creating entrypoint(app.py), and models.py(for table creation), and routes.py(for adding or removing friends), the routes was not executed: Reason was the file is not executed in app.py(so, it was imported)
+
+### second challenge
+while running app.py after importing, we encountered error while accessing localhost:5000/api/friends
+Reason: being in virtual environment,
+solution: 
+```shell
+(venv) PS C:\Users\risha\react-python-full-stack\backend> set FLASK_APP=app.py
+(venv) PS C:\Users\risha\react-python-full-stack\backend> set FLASK_ENV=development
+(venv) PS C:\Users\risha\react-python-full-stack\backend> flask run
+```
+
+```flask run``` to run the application as flask application and running development server.
+
+### third challenge
+Error encountered as ``no such table: friend``

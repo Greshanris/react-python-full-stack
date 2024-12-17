@@ -10,12 +10,21 @@ app = Flask(__name__)
 CORS(app)
 
 # adding configurations
-app.config["SQLALCHEMY_DATABASE_URI"] == "sqlite:///friends.db" # for database we will use sqllite, "this will create it locally under this backend folder", "syntax: sqlite:///database_name.db", here friends because that is what we are going to store
+# for database we will use sqllite, "this will create it locally under this backend folder", "syntax: sqlite:///database_name.db", here friends because that is what we are going to store
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///friends.db" 
 # This configuration is for performance reason
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False 
 
 # creating db instance where we just call SQLAlchemy and then just pass our app into it
 db = SQLAlchemy(app)
+
+# we need to import routes.py because, we are running this whole file.
+# Since, this is the entry point of app, and it doesn't have any idea that there is routes.py to be executed, we need to import it
+# import it, to execute routes.py whole file
+import routes
+
+# due to no such table: friend
+db.create_all()
 
 # let's just run our application, only if this particular file is run, don't run when we import it for other python file.
 if __name__ == "__main__":
