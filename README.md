@@ -32,12 +32,15 @@ while running app.py after importing, we encountered error while accessing local
 Reason: being in virtual environment,
 solution: 
 ```shell
-(venv) PS C:\Users\risha\react-python-full-stack\backend> set FLASK_APP=app.py
-(venv) PS C:\Users\risha\react-python-full-stack\backend> set FLASK_ENV=development
-(venv) PS C:\Users\risha\react-python-full-stack\backend> flask run
+set FLASK_APP=app.py
+set FLASK_ENV=development
+flask run
 ```
+``export`` is used instead of ``set`` for UNIX/LINUX environment.
 
-```flask run``` to run the application as flask application and running development server.
+``FLASK_APP`` tells Flask which file contains the application instance.
+
+``FLASK_ENV=development`` enables debug mode automatically on code changes and provided detailed error messages.
 
 ### third challenge
 Error encountered as ``no such table: friend``
