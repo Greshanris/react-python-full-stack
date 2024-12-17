@@ -23,8 +23,10 @@ db = SQLAlchemy(app)
 # import it, to execute routes.py whole file
 import routes
 
-# due to no such table: friend
-db.create_all()
+# due to the fact that we did not created our tables, although we created the model in models.py
+# so, to create one, we need to run a method
+with app.app_context(): # this particular configruation for optimization, (so, that SQLAlchemy can do its job in optimized way)
+    db.create_all()
 
 # let's just run our application, only if this particular file is run, don't run when we import it for other python file.
 if __name__ == "__main__":

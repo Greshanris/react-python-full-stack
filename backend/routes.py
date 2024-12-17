@@ -20,3 +20,5 @@ def get_friends():
     result = [friend.to_json() for friend in friends]
     # result value will be in this format: [{...}, {...}, {...}]
     return jsonify(result), 200  # 200 is status code, and also the default value.
+
+# Create a friend
