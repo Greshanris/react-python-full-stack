@@ -1,4 +1,31 @@
+# Virtual environment
 venv/
-backend/__pycache__/
-frontend/__pycache__/
+venv*/
+.Python
+bin/
+include/
+lib/
+lib64/
+pip-selfcheck.json/
+
+# IDE files
+.vscode/
+.idea/
+*.iml/
+*.pyc/
+
+# Environment variables
+.env
+
+# Database
+friend.db
+
+# Compiled Python files
 *.pyc
+
+# Dependency directories
+node_modules/
+/dist/
+
+# Python cache files
+backend/__pycache__/
