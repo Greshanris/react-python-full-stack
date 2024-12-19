@@ -11,10 +11,12 @@ we are building an website. The characterstics of website is simple:
 - Divided into frontend, and backend folder
 - Frontend is handled by react, while backend is handled by python(flask).
 
+## Backend (Flask)
+Explanation is not ordered, and is just for rough understanding.
 
-## Creation of virtual environment
+### Creation of virtual environment
 ``python -m venv venv``
-## Installation of necessary python frameworks
+### Installation of necessary python frameworks
 `` pip install flask flask-sqlalchemy flask-cors``
 
 - ``flask`` for creation of **RestAPI**
@@ -22,15 +24,15 @@ we are building an website. The characterstics of website is simple:
 
 - ``flask-cors`` to allow requests to my Flask application from different origins (domains or ports). For instance, if frontend runs on ``http://localhost:3000`` and backend runs on ``http://localhost:5000``, CORS ensures that the frontend can call the backend without restrictions.
 
-## Challenges encoutered and solution found
+### Challenges encoutered and solution found
 
-### First challenge
+#### First challenge
 After creating the app.py (entry point), models.py (for table creation), and routes.py (for adding/removing friends), the routes were not executed. 
 
 - **Reason:** The routes.py file was not imported into app.py. 
 - **Solution:** Import the routes into app.py.
 
-### Second challenge
+#### Second challenge
 While running app.py and accessing ``localhost:5000/api/friends``, an error occurred: 
 - **Reason:** The Flask environment was not set correctly due to the virtual environment. 
 - **Solution:** 
@@ -45,7 +47,7 @@ flask run
 
 ``FLASK_ENV=development`` enables debug mode automatically on code changes and provided detailed error messages.
 
-### Third challenge
+#### Third challenge
 Error encountered as ``no such table: friend``
 
 **Solution:** Used ``app.app_context()`` to ensure Flask knows which app and database to use.
@@ -59,7 +61,7 @@ with app.app_context():
 
 - ``db.create_all()`` creates the tables based on the defined models, but it needs to be run within the app context to properly access the database.
 
-## Using Postman and SQLAlchemy ``db`` instance and ``models.py``
+### Using Postman and SQLAlchemy ``db`` instance and ``models.py``
 
 Earlier, we created ``models.py`` which used ``db = SQLAlchemy(app)`` instance which was created in ``app.py``.
 
@@ -70,3 +72,7 @@ Earlier, we created ``models.py`` which used ``db = SQLAlchemy(app)`` instance w
 
 - ``POST`` :  To create a friend
 - ``
+
+## Frontend (React):
+
+### Installation procedure
