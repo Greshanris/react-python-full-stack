@@ -74,5 +74,5 @@ Earlier, we created ``models.py`` which used ``db = SQLAlchemy(app)`` instance w
 - ``
 
 ## Frontend (React):
-
+(working, not completed)
 ### Installation procedure
