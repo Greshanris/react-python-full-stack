@@ -1,13 +1,19 @@
 import { Stack, Container, Text } from '@chakra-ui/react'
 import Navbar from './components/Navbar'
 import UserGrid from './components/UserGrid'
+import { useState } from 'react'
+
+export const BASE_URL = 'http://127.0.0.1:5000/api'
 
 function App() {
+  const [users, setUsers] = useState([])
 
   return (
     // Stack is a layout component that arranges its children in a vertical stack
     <Stack minH={'100vh'}>
-      <Navbar />
+      {/* Next time we will use redux, react context, recoil or zustand for it but since this a
+      application is not massive and will not scale that high */}
+      <Navbar setUsers={setUsers} />
       <Container maxW={"1200px"} my={4}>
         <Text
         fontSize={{base: "2xl", md: "50"}}
@@ -27,7 +33,7 @@ function App() {
           🎇
         </Text>
 
-        <UserGrid />
+        <UserGrid users={users} setUsers={setUsers}/>
       </Container>
     </Stack>
   )

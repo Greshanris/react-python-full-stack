@@ -30,7 +30,7 @@ def create_friend():
         # checking for required fields
         required_fields = ["name","role","description","gender"]
         for field in required_fields:
-            if field not in data:
+            if field not in data or not data.get(field):
                 return jsonify({"error":f"Missing required field: {field}"}), 400 # Status code 400 Bad Request: it is due to client-side issues(like missing or invalid data)
 
         name = data.get("name")
@@ -55,7 +55,7 @@ def create_friend():
 
         db.session.commit()
 
-        return jsonify({"msg":"New Friend updated Sucessfully"}),201 # 201 Created means some resource has been created: For successful "POST" requests.
+        return jsonify(new_friend.to_json()),201 # 201 Created means some resource has been created: For successful "POST" requests.
     except Exception as e:
         # rollback to previous state if any error occured
         db.session.rollback()
