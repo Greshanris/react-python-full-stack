@@ -1,6 +1,7 @@
 # TODO: UPDATE THIS FILE FOR DEPLOYMENT...
 # Entry point for our application
-from flask import Flask
+import os
+from flask import Flask, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
@@ -18,6 +19,21 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # creating db instance where we just call SQLAlchemy and then just pass our app into it
 db = SQLAlchemy(app)
+
+frontend_folder = os.path.join(os.getcwd(), "..", "frontend")
+dist_folder = os.path.join(frontend_folder, "dist")
+
+# Server static files from the "dist" folder under the "frontend" directory
+@app.route("/", defaults={"filename":""})
+@app.route("/<path:filename>") # Dynamic
+def index(filename):
+    if not filename:
+        filename = "index.html"
+    return send_from_directory(dist_folder, filename)
+
+
+# API routes
+
 
 # we need to import routes.py because, we are running this whole file.
 # Since, this is the entry point of app, and it doesn't have any idea that there is routes.py to be executed, we need to import it
