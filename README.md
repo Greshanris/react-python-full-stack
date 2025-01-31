@@ -76,4 +76,5 @@ Earlier, we created ``models.py`` which used ``db = SQLAlchemy(app)`` instance w
 ## Frontend (React):
 completed
 
-### Deployment left....
+### Deployment Completed
+[https://react-python-full-stack.onrender.com/](https://react-python-full-stack.onrender.com/)
