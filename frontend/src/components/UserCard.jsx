@@ -2,7 +2,6 @@ import { Avatar, Box, Card, CardBody, CardHeader, Flex, Heading, IconButton, Tex
 import React from 'react'
 import { BiTrash } from 'react-icons/bi'
 import EditModal from './EditModal'
-import { USERS } from '../lib/sample/sample'
 import { BASE_URL } from '../App'
 
 const UserCard = ({ user, setUsers }) => {
