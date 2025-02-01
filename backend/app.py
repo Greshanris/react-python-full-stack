@@ -9,7 +9,7 @@ from flask_cors import CORS
 # __name__ as an argument tells flask to find the application (module name), so it can locate resources like templates, static files, and configuration
 app = Flask(__name__)
 
-CORS(app)
+CORS(app, origins='*')
 
 # adding configurations
 # for database we will use sqllite, "this will create it locally under this backend folder", "syntax: sqlite:///database_name.db", here friends because that is what we are going to store
