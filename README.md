@@ -78,3 +78,9 @@ completed
 
 ### Deployment Completed
 [https://react-python-full-stack.onrender.com/](https://react-python-full-stack.onrender.com/)
+
+#### TODO (these are the areas which will be working on):
+- Again, CORS error problem encountered, will try on different platform if issue still persists...
+- Using Context API and Reactredux on places needed..
+- New Features to be added... (just simple features)
+
