@@ -74,13 +74,13 @@ Earlier, we created ``models.py`` which used ``db = SQLAlchemy(app)`` instance w
 - ``
 
 ## Frontend (React):
-completed
+completed using "chakra-ui" and "react-icons" for icons.
 
 ### Deployment Completed
 [https://react-python-full-stack.onrender.com/](https://react-python-full-stack.onrender.com/)
 
 #### TODO (these are the areas which will be working on):
-- Again, CORS error problem encountered, will try on different platform if issue still persists...
-- Using Context API and Reactredux on places needed..
-- New Features to be added... (just simple features)
+- Again, CORS error problem encountered, will try on different platform if issue still persists... (Completed)
+- Using Context API and Reactredux on places needed.. (this left, and i will do it when i have time after i finish my mern-chat-app project😁)
+- New Features to be added... (just simple features, features is not decided, and anyone is welcome here to clone it and add features, and i strongly recommend it, because this project will be left like this in my hand after some time. I always forget😵)
 
