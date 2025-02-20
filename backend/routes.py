@@ -7,12 +7,13 @@
 from app import app, db
 from flask import request, jsonify
 from models import Friend
-
+from flask_cors import cross_origin
 
 # Get all friends
 # So, to be able to create a route, we would create a decorator function(which is a function that adds methods to pre-defined ones without changing it's core)
 # Here, @app.route("name of the route", if we hit it with get method, it will return the value function returned)
 @app.route("/api/friends", methods=["GET"])
+@cross_origin() # This is to allow cross-origin requests, so that our frontend can make requests to our backend
 def get_friends():
     # returns all friends that we have in database
     friends = Friend.query.all() # it is now in the format of python objects. 
@@ -23,6 +24,7 @@ def get_friends():
 
 # Create a friend
 @app.route("/api/friends", methods=["POST"])
+@cross_origin()
 def create_friend():
     try:
         data = request.json
@@ -65,6 +67,7 @@ def create_friend():
 # Delete a friend
 # here, after the name of the route, we need to pass an id, to know which friend we are going to delete
 @app.route("/api/friends/<int:id>", methods=["DELETE"])
+@cross_origin()
 def delete_friend(id):
     try:
         friend = Friend.query.get(id)
@@ -80,6 +83,7 @@ def delete_friend(id):
 
 # Update a friend profile
 @app.route("/api/friends/<int:id>", methods=["PATCH"])
+@cross_origin()
 def update_friend(id):
     try:
         friend = Friend.query.get(id)
